@@ -26,7 +26,8 @@
     "react-native-snap-carousel": "^4.0.0-beta.5",
     "react-native-web": "~0.11.7",
     "react-router-native": "^5.2.0",
-    "react-router-native-stack": "0.0.16"
+    "react-router-native-stack": "0.0.16",
+    "lottie-react-native": "~2.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",

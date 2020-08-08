@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, SafeAreaView } from 'react-native';
-import Route from './src/App'
+import Route from './src/App';
 export default function App() {
   return (
     <View style={styles.bg}>
@@ -16,10 +16,9 @@ export default function App() {
 const styles = StyleSheet.create({
   bg: {
     flex: 1,
-    backgroundColor: '#ffe8cc'
+    backgroundColor: '#ededed'
   },
   safearea: {
     flex: 1,
-    marginTop: 30
   }
 });

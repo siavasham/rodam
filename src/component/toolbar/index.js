@@ -1,5 +1,4 @@
 import React from 'react';
-import { t } from 'locales';
 import Home from 'icons/home.png';
 import Explorer from 'icons/explorer.png';
 import Bookmark from 'icons/bookmark.png';
@@ -11,11 +10,11 @@ import * as RootNavigation from 'component/rootNavigation';
 import ToolBar from './tabBar';
 
 const items = [
-  { icon: Home, name: "Home", label: t('home') },
-  { icon: Explorer, name: "Explorer", label: t('explorer') },
-  { icon: Bookmark, name: "Bookmark", label: t('bookmark') },
-  { icon: Convertion, name: "Convertion", label: t('convertion') },
-  { icon: Profile, name: "Profile", label: t('profile') },
+  { icon: Home, name: "Home", label: 'home' },
+  { icon: Explorer, name: "Explorer", label: 'explorer' },
+  { icon: Bookmark, name: "Bookmark", label: 'bookmark' },
+  { icon: Convertion, name: "Convertion", label: 'convertion' },
+  { icon: Profile, name: "Profile", label: 'profile' },
 ]
 
 export default function Toolbar() {

@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableWithoutFeedback, Image, Animated } from 'react-native';
+import Text from 'component/Text';
+import Pressable from 'component/pressable';
+import { StyleSheet, View, Image, Animated } from 'react-native';
 import useSpring from './useSpring';
 
 export default function Tabitem({ style, icon, label, active, onPress }) {
@@ -10,7 +12,7 @@ export default function Tabitem({ style, icon, label, active, onPress }) {
     const iconOpacity = animation.interpolate({ inputRange: [0, 1], outputRange: [1, 0] });
     const dotScale = animation;
     return (
-        <TouchableWithoutFeedback onPress={onPress}>
+        <Pressable onPress={onPress}>
             <View style={[styles.container, style]}>
                 {active && (
                     <Animated.View
@@ -34,7 +36,7 @@ export default function Tabitem({ style, icon, label, active, onPress }) {
                 )}
                 {active && <Animated.View style={[styles.dot, { transform: [{ scale: dotScale }] }]} />}
             </View>
-        </TouchableWithoutFeedback>
+        </Pressable>
     );
 };
 
@@ -55,9 +57,7 @@ const styles = StyleSheet.create({
         height: 22,
     },
     label: {
-        color: '#444',
         fontSize: 16,
-        fontFamily: 'iran-sans',
         marginTop: -5
     },
     dot: {

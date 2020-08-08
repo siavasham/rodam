@@ -1,76 +1,60 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
+import Background from 'component/bg';
+import Text from 'component/Text';
+import Pressable from 'component/pressable';
+import ReadMore from 'widget/readMore';
+import HomeCard from 'widget/homeCard';
+import { StyleSheet, View, VirtualizedList } from 'react-native';
 
-let data = [
-    {
-        title: "Item 1",
-        text: "Text 1",
-        image: 'https://picsum.photos/200/300?r=' + Math.random()
-    },
-    {
-        title: "Item 2",
-        text: "Text 2",
-        image: 'https://picsum.photos/200/300?r=' + Math.random()
-    },
-    {
-        title: "Item 3",
-        text: "Text 3",
-        image: 'https://picsum.photos/200/300?r=' + Math.random()
-    },
-    {
-        title: "Item 4",
-        text: "Text 4",
-        image: 'https://picsum.photos/200/300?r=' + Math.random()
-    },
-    {
-        title: "Item 5",
-        text: "Text 5",
-        image: 'https://picsum.photos/200/300?r=' + Math.random()
-    },
-]
-export default function Home() {
-    let _carousel = useRef();
-    const { width, height } = Dimensions.get('window');
-    const _renderItem = ({ item, index }) => {
-        return (
-            <View style={styles.slide}>
-                <Image style={styles.image} source={{ uri: item.image }} />
-            </View>
-        );
+const DATA = [];
+
+const getItem = (data, index) => {
+    return {
+        id: Math.random().toString(12).substring(0),
+        title: 'تست'
     }
+}
+
+const getItemCount = (data) => {
+    return 50;
+}
+
+const Item = ({ title }) => {
     return (
-        <View style={{ flex: 1 }}>
-            <Carousel
-                ref={_carousel}
-                layout={'default'}
-                data={data}
-                renderItem={_renderItem}
-                sliderWidth={width}
-                itemWidth={width - 80}
-                firstItem={0}
-                useScrollView={true}
-                loop={true}
+        <View style={styles.item}>
+            <Text style={styles.title}>{title}</Text>
+        </View>
+    );
+}
+export default function Home() {
+
+    return (
+        <View style={styles.container}>
+            <Background />
+            <VirtualizedList
+                data={DATA}
+                initialNumToRender={4}
+                renderItem={({ item }, i) => <HomeCard key={i} item={item} />}
+                keyExtractor={item => item.key}
+                getItemCount={getItemCount}
+                getItem={getItem}
             />
         </View>
     );
 }
 const styles = StyleSheet.create({
-    slide: {
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.5,
-        shadowRadius: 5,
-        elevation: 5,
-        height: 150,
-        borderRadius: 10
+    container: {
+        flex: 1
     },
-    image: {
-        width: '100%',
-        height: '100%',
-        borderRadius: 10,
-    }
+    item: {
+        backgroundColor: '#f9c2ff',
+        height: 150,
+        justifyContent: 'center',
+        marginVertical: 8,
+        marginHorizontal: 16,
+        padding: 20,
+    },
+    title: {
+        fontSize: 32,
+    },
 });

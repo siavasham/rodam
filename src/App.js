@@ -31,7 +31,7 @@ function MyStack() {
       screenOptions={{
         headerShown: false,
         tabBarVisible: false,
-        ...TransitionPresets.ModalSlideFromBottomIOS,
+        ...TransitionPresets.ScaleFromCenterAndroid,
       }}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Explorer" component={Explorer} />
@@ -45,6 +45,7 @@ function MyStack() {
 export default function App() {
   let [fontsLoaded] = useFonts({
     'iran-sans': require('fonts/IRAN-Sans-Regular.ttf'),
+    'iran-sans-bold': require('fonts/IRAN-Sans-Bold.ttf'),
   });
 
   if (!fontsLoaded)
@@ -57,7 +58,9 @@ export default function App() {
             <MyStack />
           </NavigationContainer>
         </View>
-        <ToolBar />
+        <View style={styles.bottom} >
+          <ToolBar />
+        </View>
       </View>
     );
 }
@@ -68,10 +71,12 @@ const styles = StyleSheet.create({
   },
   top: {
     flex: 1,
-    overflow: 'hidden',
   },
   bottom: {
-    height: 100
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    left: 0,
   },
   screen: {
     flex: 1,

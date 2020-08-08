@@ -5,4 +5,6 @@ export default {
     convertion: 'گفت و گو',
     profile: 'پروفایل',
 
+    popular: 'پر بازدید ترین ها',
+    viewAll: 'مشاهده همه'
 }
