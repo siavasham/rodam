@@ -26,7 +26,7 @@ export default memo(function ReadMore({ item }) {
                 </View>
             </View>
             <View style={styles.imageRoot}>
-                <Image resizeMode={'cover'} style={styles.image} source={{ uri: 'https://picsum.photos/200/300' }} />
+                <Image style={styles.image} source={{ uri: 'https://picsum.photos/200/300' }} />
                 <View style={styles.imageShadow} />
             </View>
             <View style={styles.action}>

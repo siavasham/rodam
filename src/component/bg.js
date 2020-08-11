@@ -3,9 +3,9 @@ import { ImageBackground, StyleSheet, View } from 'react-native';
 import bg from 'bg.jpg';
 
 export default function Background() {
-    return (
-        <View style={styles.image} />
-    )
+    // return (
+    //     <View style={styles.image} />
+    // )
     return (
         <ImageBackground source={bg} style={styles.image} />
     );

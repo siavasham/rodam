@@ -1,9 +1,9 @@
 import React from 'react';
-import { TouchableWithoutFeedback, StyleSheet } from 'react-native';
+import { TouchableWithoutFeedback, StyleSheet, View } from 'react-native';
 
 export default function Pressable({ children, style, onPress }) {
     return (
-        <TouchableWithoutFeedback style={[styles.pressable, style]} onPress={onPress}>
+        <TouchableWithoutFeedback onPress={onPress}>
             {children}
         </TouchableWithoutFeedback>
     )

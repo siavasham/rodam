@@ -3,6 +3,8 @@ import Text from 'component/Text';
 import Pressable from 'component/pressable';
 import { StyleSheet, View, Dimensions, Image } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
+import theme from 'theme/default';
+import Icon from 'component/icons';
 
 let DefaultData = [
     {
@@ -45,17 +47,20 @@ export default memo(function ReadMore({ title, data }) {
         <View style={styles.container}>
             <View style={styles.heading}>
                 <Text bold style={styles.title}>{title}</Text>
-                <Pressable onPress={null}>
-                    <Text bold style={styles.link}>viewAll</Text>
+                <Pressable onPress={null} >
+                    <View style={styles.more}>
+                        <Text bold style={styles.link}>viewAll</Text>
+                        <Icon name='leftArrow' color={theme.secondaryColor} />
+                    </View>
                 </Pressable>
             </View>
             <Carousel
                 ref={_carousel}
-                layout={'tinder'}
+                layout={'default'}
                 data={data ? data : DefaultData}
                 renderItem={_renderItem}
                 sliderWidth={width}
-                itemWidth={width - 20}
+                itemWidth={width - 80}
                 useScrollView={true}
                 loop={true}
             />
@@ -65,15 +70,27 @@ export default memo(function ReadMore({ title, data }) {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 10,
-        paddingBottom: 10,
+        flexDirection: 'column',
+        backgroundColor: 'rgba(0,0,0,.01)',
+        marginTop: 20,
+        padding: 10,
+        shadowColor: theme.primaryColor,
+        shadowOffset: {
+            width: 0,
+            height: 0,
+        },
+        shadowOpacity: 0.1,
+        shadowRadius: 5,
+        elevation: 2,
+        height: 250,
+        borderRadius: 10,
     },
     heading: {
         display: 'flex',
         flexDirection: 'row-reverse',
         justifyContent: 'space-between',
-        padding: 10,
-        paddingTop: 0
+        alignItems: 'center',
+        marginBottom: 15
     },
     slide: {
         height: 180,
@@ -84,10 +101,17 @@ const styles = StyleSheet.create({
         height: '100%',
         borderRadius: 10,
     },
-    title: {
-
+    more: {
+        flexDirection: 'row-reverse',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(255,255,255,1)',
+        borderRadius: 1255,
+        paddingVertical: 5,
+        paddingLeft: 10,
     },
     link: {
-        color: '#999'
+        color: theme.secondaryColor,
+        marginLeft: -8
     }
 });
