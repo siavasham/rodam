@@ -1,4 +1,5 @@
 import React from 'react';
+import theme from 'theme/default';
 import Text from 'component/Text';
 import Pressable from 'component/pressable';
 import { StyleSheet, View, Image, Animated } from 'react-native';
@@ -52,11 +53,12 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     icon: {
-        tintColor: '#777',
+        tintColor: theme.tabbarColor,
         width: 22,
         height: 22,
     },
     label: {
+        color: theme.tabbarColor,
         fontSize: 16,
         marginTop: -5
     },
@@ -66,6 +68,6 @@ const styles = StyleSheet.create({
         width: 5,
         height: 5,
         borderRadius: 2.5,
-        backgroundColor: '#777',
+        backgroundColor: theme.tabbarColor,
     },
 });

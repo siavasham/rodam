@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import theme from 'theme/default';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
@@ -19,7 +20,6 @@ const MyTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: 'rgb(255, 45, 85)',
     background: 'transparent'
   },
 };
@@ -68,15 +68,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    borderRadius: 5,
+    overflow: 'hidden',
+    backgroundColor: theme.primaryBackground
   },
   top: {
     flex: 1,
   },
   bottom: {
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-    left: 0,
+
   },
   screen: {
     flex: 1,

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import theme from 'theme/default';
 import { StyleSheet, Text, View } from 'react-native';
 import TabItem from './tabItem';
 
@@ -28,19 +29,17 @@ const styles = StyleSheet.create({
     bar: {
         flexDirection: "row-reverse",
         height: 50,
-        backgroundColor: "#fff",
-        shadowColor: "#333",
+        backgroundColor: theme.tabbarBackground,
+        shadowColor: theme.tabbarBackground,
         shadowOffset: {
             width: 0,
-            height: -1,
+            height: -5,
         },
-        shadowOpacity: 0.2,
+        shadowOpacity: 0.3,
         shadowRadius: 10,
         elevation: 3,
-        // borderTopRightRadius: 10,
-        // borderTopLeftRadius: 10,
-        borderRadius: 20,
-        margin: 3
+        borderTopRightRadius: 20,
+        borderTopLeftRadius: 20,
     },
     item: {
         flex: 1,

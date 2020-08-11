@@ -9,7 +9,6 @@ export default function explorer() {
     return (
         <View style={{ flex: 1 }}>
             <Background />
-            <ReadMore title='popular' />
         </View>
     );
 }

@@ -14,7 +14,7 @@ export default function Background() {
 const styles = StyleSheet.create({
     image: {
         flex: 1,
-        backgroundColor: '#ebedee',
+        backgroundColor: '#f8f8f8',
         resizeMode: "cover",
         justifyContent: "center",
         position: 'absolute',
