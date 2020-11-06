@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Background from 'component/bg';
 import Text from 'component/Text';
 import Pressable from 'component/pressable';
 import ReadMore from 'widget/readMore';

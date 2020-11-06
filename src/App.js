@@ -10,6 +10,7 @@ import { useFonts } from 'expo-font';
 
 
 import ToolBar from 'component/toolbar/';
+// import Sign from 'route/sign/auth';
 import Home from 'route/home/home';
 import Explorer from 'route/explorer/explorer';
 import Bookmark from 'route/bookmark/bookmark';
@@ -50,19 +51,20 @@ export default function App() {
 
   if (!fontsLoaded)
     return <AppLoading />
-  else
-    return (
-      <View style={styles.container}>
-        <View style={styles.top} >
-          <NavigationContainer ref={navigationRef} theme={MyTheme} >
-            <MyStack />
-          </NavigationContainer>
-        </View>
-        <View style={styles.bottom} >
-          <ToolBar />
-        </View>
+  // else
+  //   return (< Sign />)
+  return (
+    <View style={styles.container}>
+      <View style={styles.top} >
+        <NavigationContainer ref={navigationRef} theme={MyTheme} >
+          <MyStack />
+        </NavigationContainer>
       </View>
-    );
+      <View style={styles.bottom} >
+        <ToolBar />
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
